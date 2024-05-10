@@ -1,0 +1,60 @@
+<div class="contenedor">
+    <div class="titulo col-md-12">
+        <div class="textoCabecera text-center col-md-12">
+            <h3>Creación de la incidencia</h3>
+            <p>Rellena el siguiente formulario y envíalo para hacérsela llegar al gestor</p>
+        </div>
+    </div>
+
+    <div class="contendorFormulario col-md-12 mt-5">
+        <form (ngSubmit)="onSubmit()" class="row">
+            <div class="formulario col-md-6">
+                <div class="d-flex flex-column">
+                    <div class="form-group">
+                        <label for="asunto">Asunto de la incidencia</label>
+                        <input name="asunto" type="text" class="form-control" id="asunto" placeholder="Introduzca el asunto de la incidencia" [(ngModel)]="formData.asunto">
+                    </div>
+                    <div class="form-group">
+                        <label for="prioridad">Nivel de prioridad</label>
+                        <select name="nivel_prioridad" id="prioridad" class="form-control" [(ngModel)]="formData.nivel_prioridad">
+                            <option value="opcionDefault">Seleccione una opción</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Media">Media</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Introduzca su nombre completo" [(ngModel)]="formData.nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input name="fecha" type="date" class="form-control" id="fecha" [(ngModel)]="formData.fecha">
+                    </div>
+                    <div class="form-group">
+                        <label for="puesto">Puesto de trabajo</label>
+                        <select name="puesto_trabajo" id="puesto" class="form-control" [(ngModel)]="formData.puesto_trabajo">
+                            <option value="opcionDefault">Seleccione una opción</option>
+                            <option value="Administrativo">Administrativo</option>
+                            <option value="Medico">Médico</option>
+                            <option value="Radiologo">Radiólogo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="contendorDescripcion col-md-6">
+                <label for="Descripcion">
+                    <img src="../../../assets/images/ImagenesGenerales/descripcionIncidencia.svg" alt="Descripción" id="">
+                    <img src="../../../assets/images/ImagenesGenerales/Vector 4.svg" alt="Descripción" id="barra" class="mt-1">
+                    Descripción de la incidencia
+                </label>
+                <div class="descripcionIncidencia d-flex align-items-center justify-content-center">
+                    <textarea name="descripcion" id="descripcion" cols="50" rows="16" [(ngModel)]="formData.descripcion"></textarea>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <input type="submit" value="Enviar" id="btnEnviar" routerLink="{{rutaDestino}}">
+            </div>
+        </form>
+    </div>
+</div> 
